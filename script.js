@@ -48,10 +48,10 @@ const tyhja = {
 };
 
 //Alotusnapin sijoitus
-peliContainer.insertAdjacentHTML(
-  "afterbegin",
-  `<button class="aloita">Aloita</button>`
-);
+// peliContainer.insertAdjacentHTML(
+//   "afterbegin",
+//   `<button class="aloita">Aloita</button>`
+// );
 const aloitusNappi = document.querySelector(".aloita");
 
 const aloitusnapinSijoitus = function () {
@@ -328,11 +328,11 @@ const render = function () {
 //////////// RENDERÖINTIFUNKTIO LOPPUU
 /////////////////////////////////////////////////
 
-aloitusnapinSijoitus();
+// aloitusnapinSijoitus();
 nappuloidenMitat();
 render();
 
-//Aloitusnapin painalllus
+//Aloitusnapin painallus
 window.addEventListener("click", function () {
   aloitusNappi.style.visibility = "hidden";
   arvonta();
@@ -346,7 +346,7 @@ window.addEventListener("click", function () {
 window.addEventListener(
   "resize",
   function () {
-    aloitusnapinSijoitus();
+    // aloitusnapinSijoitus();
     render();
     document.querySelector(".arvontaboksi") ? naytaSinisetTulokset() : "";
   },
