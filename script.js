@@ -62,6 +62,11 @@ const aloitusnapinSijoitus = function () {
 
 // Laske nappuloiden mitat
 const nappuloidenMitat = function () {
+  lauta = {
+    leveys: lautaEl.clientWidth,
+    korkeus: lautaEl.clientHeight,
+  };
+
   for (const ukko of ukot) {
     ukko.style.height = `${lauta.korkeus * 0.097}px`;
   }
@@ -139,49 +144,6 @@ const naytaSinisetTulokset = function () {
         </div>
     </div>
     </div>`
-
-    // `<div class="arvontaboksi">
-    //     <table class="arvontataulukko">
-    //         <tr class="arvontakuvat arvonta">
-    //             <td><img class="arvonta-ukko-sininen arvonta" src="./img/Ukko-sininen.png" alt="Ukko"></td>
-    //             <td><img class="arvonta-maali-sininen arvonta" src="./img/Maali-sininen.png" alt="Maali"></td>
-    //         </tr>
-    //         <tr class="arvontatekstit arvonta">
-    //             <td><h1 class="arvontateksti">${sininenUkkoAloitus}</h1></td>
-    //             <td><h1 class="arvontateksti">${sininenMaaliAloitus}</h1></td>
-    //         </tr>
-    //     </table>
-    //     <table class="arvontataulukko">
-    //         <tr class="arvontakuvat arvonta">
-    //             <td><img class="arvonta-ukko-oranssi arvonta" src="./img/Ukko-oranssi.png" alt="Ukko"></td>
-    //             <td><img class="arvonta-maali-oranssi arvonta" src="./img/Maali-oranssi.png" alt="Maali"></td>
-    //         </tr>
-    //         <tr class="arvontatekstit arvonta">
-    //             <td><h1 class="arvontateksti">${oranssiUkkoAloitus}</h1></td>
-    //             <td><h1 class="arvontateksti">${oranssiMaaliAloitus}</h1></td>
-    //         </tr>
-    //     </table>
-    //     <table class="arvontataulukko">
-    //         <tr class="arvontakuvat arvonta">
-    //             <td><img class="arvonta-ukko-violetti arvonta" src="./img/Ukko-violetti.png" alt="Ukko"></td>
-    //             <td><img class="arvonta-maali-violetti arvonta" src="./img/Maali-violetti.png" alt="Maali"></td>
-    //         </tr>
-    //         <tr class="arvontatekstit arvonta">
-    //             <td><h1 class="arvontateksti">${violettiUkkoAloitus}</h1></td>
-    //             <td><h1 class="arvontateksti">${violettiMaaliAloitus}</h1></td>
-    //         </tr>
-    //     </table>
-    //     <table class="arvontataulukko">
-    //         <tr class="arvontakuvat arvonta">
-    //             <td><img class="arvonta-ukko-ruskea arvonta" src="./img/Ukko-ruskea.png" alt="Ukko"></td>
-    //             <td><img class="arvonta-maali-ruskea arvonta" src="./img/Maali-ruskea.png" alt="Maali"></td>
-    //         </tr>
-    //         <tr class="arvontatekstit arvonta">
-    //             <td><h1 class="arvontateksti">${ruskeaUkkoAloitus}</h1></td>
-    //             <td><h1 class="arvontateksti">${ruskeaMaaliAloitus}</h1></td>
-    //         </tr>
-    //     </table>
-    // </div>`
   );
 
   const arvontaboksi = document.querySelector(".arvontaboksi");
@@ -191,11 +153,6 @@ const naytaSinisetTulokset = function () {
   document
     .querySelectorAll(".arvontateksti")
     .forEach((el) => (el.style.color = "white"));
-  //   document.querySelector(".arvonta-ukko-sininen").style.width =
-  //     document.querySelector(".arvonta-ukko-oranssi").style.width =
-  //     document.querySelector(".arvonta-ukko-violetti").style.width =
-  //     document.querySelector(".arvonta-ukko-ruskea").style.width =
-  //       document.querySelector(".arvonta-maali-sininen").clientWidth * 0.6 + "px";
 };
 
 ///////////////////////////////////
