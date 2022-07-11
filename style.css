@@ -1,4 +1,13 @@
+html {
+    overflow: hidden;
+    width: 100%;
+    }
+    
 body {
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    position: fixed;
     overflow: hidden;
     background-color: #52360c;
     background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
