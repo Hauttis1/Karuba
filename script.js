@@ -35,16 +35,16 @@ let ruudunKorkeus = document.body.clientHeight;
 
 //Pelilaudan mitat
 
-let lauta = {
-  leveys: lautaEl.clientWidth,
-  korkeus: lautaEl.clientHeight,
-};
+// let lauta = {
+//   leveys: lautaEl.clientWidth,
+//   korkeus: lautaEl.clientHeight,
+// };
 
 // TYHJÄ TILA
 
 const tyhja = {
   yla: ruudunKorkeus / 150,
-  vasen: (ruudunLeveys - lauta.leveys) / 2,
+  vasen: (ruudunLeveys - lautaEl.clientWidth) / 2,
 };
 
 //Alotusnapin sijoitus
@@ -56,30 +56,25 @@ const aloitusNappi = document.querySelector(".aloita");
 
 const aloitusnapinSijoitus = function () {
   aloitusNappi.style.top = `${lauta.korkeus * 0.237}px`;
-  aloitusNappi.style.fontSize = `${lauta.leveys * 0.01}rem`;
-  aloitusNappi.style.padding = `${lauta.leveys / 30}px`;
+  aloitusNappi.style.fontSize = `${lautaEl.clientWidth * 0.01}rem`;
+  aloitusNappi.style.padding = `${lautaEl.clientWidth / 30}px`;
 };
 
 // Laske nappuloiden mitat
 const nappuloidenMitat = function () {
-  lauta = {
-    leveys: lautaEl.clientWidth,
-    korkeus: lautaEl.clientHeight,
-  };
-
   for (const ukko of ukot) {
-    ukko.style.height = `${lauta.korkeus * 0.097}px`;
+    ukko.style.height = `${lautaEl.clientHeight * 0.097}px`;
   }
   for (const maali of maalit) {
-    maali.style.height = `${lauta.korkeus * 0.061}px`;
+    maali.style.height = `${lautaEl.clientHeight * 0.061}px`;
   }
 };
 
 //Aloituspaikka pikseleinä
 const start = function (yla, vasen) {
   return {
-    yla: `${tyhja.yla + lauta.korkeus * yla}px`,
-    vasen: `${tyhja.vasen + lauta.leveys * vasen}px`,
+    yla: `${tyhja.yla + lautaEl.clientHeight * yla}px`,
+    vasen: `${tyhja.vasen + lautaEl.clientWidth * vasen}px`,
   };
 };
 
@@ -147,8 +142,8 @@ const naytaSinisetTulokset = function () {
   );
 
   const arvontaboksi = document.querySelector(".arvontaboksi");
-  // arvontaboksi.style.top = tyhja.yla + lauta.korkeus * 0.13 + "px";
-  arvontaboksi.style.width = lauta.leveys * 0.6 + "px";
+  // arvontaboksi.style.top = tyhja.yla + lautaEl.clientHeight * 0.13 + "px";
+  arvontaboksi.style.width = lautaEl.clientWidth * 0.6 + "px";
 
   document
     .querySelectorAll(".arvontateksti")
@@ -232,11 +227,11 @@ const render = function () {
 
   // Laske uudelleen pelilaudan mitat
 
-  lauta.leveys = lautaEl.clientWidth;
+  lautaEl.clientWidth = lautaEl.clientWidth;
   lauta.korkeus = lautaEl.clientHeight;
 
   tyhja.yla = ruudunKorkeus / 150;
-  tyhja.vasen = (ruudunLeveys - lauta.leveys) / 2;
+  tyhja.vasen = (ruudunLeveys - lautaEl.clientWidth) / 2;
 
   // ALOITUSPAIKAT
 
