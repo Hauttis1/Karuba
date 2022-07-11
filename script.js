@@ -272,10 +272,6 @@ const render = function () {
 //////////// RENDERÖINTIFUNKTIO LOPPUU
 /////////////////////////////////////////////////
 
-// aloitusnapinSijoitus();
-nappuloidenMitat();
-render();
-
 //Aloitusnapin painallus
 window.addEventListener("click", function () {
   aloitusNappi.style.visibility = "hidden";
@@ -296,3 +292,8 @@ window.addEventListener(
   },
   true
 );
+
+window.addEventListener("load", (event) => {
+  nappuloidenMitat();
+  render();
+});

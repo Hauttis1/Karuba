@@ -1,14 +1,4 @@
-html {
-    overflow: hidden;
-    width: 100%;
-    }
-    
 body {
-    height: 100%;
-    left: 50%;
-    transform: translate(-50%);
-    position: fixed;
-    overflow: hidden;
     background-color: #52360c;
     background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -67,7 +57,9 @@ body {
 #peli {
     height: 95vh;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .arvontaboksi {
@@ -83,6 +75,13 @@ body {
     flex-wrap: wrap;
 }
 
+@media (max-width:650px){
+    .arvontaboksi {
+        top: 2.5em;
+        left: 60%;
+    }
+}
+
 .flash {
     animation: flash 0.5s ease-out;
 }
@@ -94,10 +93,6 @@ body {
   }
 
 @media (max-width:480px){
-    .arvontaboksi {
-        top: 2.5em;
-        left: 60%;
-    }
 
     #peli {
         margin-top: 8vh;
@@ -110,6 +105,10 @@ body {
         transform: translate(-50%);
         margin-top: 10vh;
         width: 80%;
+    }
+
+    .arvontataulukko {
+        padding: 0.3em 0.5em 0.2em 0.4em !important;
     }
 }
 
