@@ -47,15 +47,10 @@ const tyhja = {
   vasen: (ruudunLeveys - lautaEl.clientWidth) / 2,
 };
 
-//Alotusnapin sijoitus
-// peliContainer.insertAdjacentHTML(
-//   "afterbegin",
-//   `<button class="aloita">Aloita</button>`
-// );
 const aloitusNappi = document.querySelector(".aloita");
 
 const aloitusnapinSijoitus = function () {
-  aloitusNappi.style.top = `${lauta.korkeus * 0.237}px`;
+  aloitusNappi.style.top = `${lautaEl.clientHeight * 0.237}px`;
   aloitusNappi.style.fontSize = `${lautaEl.clientWidth * 0.01}rem`;
   aloitusNappi.style.padding = `${lautaEl.clientWidth / 30}px`;
 };
@@ -226,9 +221,6 @@ const render = function () {
   ruudunKorkeus = document.body.clientHeight;
 
   // Laske uudelleen pelilaudan mitat
-
-  lautaEl.clientWidth = lautaEl.clientWidth;
-  lauta.korkeus = lautaEl.clientHeight;
 
   tyhja.yla = ruudunKorkeus / 150;
   tyhja.vasen = (ruudunLeveys - lautaEl.clientWidth) / 2;
