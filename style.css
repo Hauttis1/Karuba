@@ -207,7 +207,7 @@ body {
     }
 
     .arvontataulukko {
-        padding: 0.3em 0.5em 0.2em 0.4em !important;
+        padding: 0.3em 0.7em 0.2em 0.6em !important;
     }
 
     .arvontatekstit h1 {
@@ -217,10 +217,13 @@ body {
 
 /* MOBILE HORIZONTAL */
 
-@media (max-height:480px){
+@media (max-height:420px){
     .arvontaboksi {
-        top: 5em;
-        left: 57%;
+        top: 2em;
+        left: 53%;
+    }
+    .arvontataulukko {
+        padding: 0.3em 0.7em 0.2em 0.6em !important;
     }
 }
 
